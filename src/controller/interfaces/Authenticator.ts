@@ -1,3 +1,6 @@
+import { USER_ROLES } from "./User";
+
 export interface AuthenticationData {
-    id: string
+    id: string,
+    role: USER_ROLES
 };
