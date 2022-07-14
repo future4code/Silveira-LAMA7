@@ -8,7 +8,7 @@ export class BandController {
         private bandBusiness: BandBusiness
     ){}
 
-    public async signupBand(req: Request, res: Response) {
+    public signupBand = async (req: Request, res: Response) => {
         try {
             const { name, musicalGenre, responsible } = req.body
             const token = String(req.headers.auth)

@@ -17,7 +17,5 @@ const bandBusiness = new BandBusiness(
 
 const bandController = new BandController(bandBusiness)
 
-console.log(bandController)
-
 bandRouter.post("/signup", bandController.signupBand)
 

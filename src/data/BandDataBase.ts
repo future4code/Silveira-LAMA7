@@ -2,7 +2,7 @@ import { bandSignupDTO } from "../controller/interfaces/BandSignupDTO";
 import { Database } from "./Database";
 
 export class BandDataBase extends Database {
-    public async insertBand(input: bandSignupDTO, id: string) {
+    public insertBand = async (input: bandSignupDTO, id: string) => {
         try {
             
             const { name, musicalGenre, responsible } = input
