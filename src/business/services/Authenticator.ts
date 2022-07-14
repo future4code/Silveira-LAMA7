@@ -22,6 +22,9 @@ export class Authenticator {
             process.env.JWT_KEY as string
         ) as any;
 
-        return { id: payload.id };
+        return { 
+            id: payload.id,
+            role: payload.role
+         };
     };
 };
