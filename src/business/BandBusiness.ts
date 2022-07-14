@@ -14,7 +14,7 @@ export class BandBusiness {
 
     ){}
 
-    public async signupBand(input: bandSignupDTO, token: string){
+    public signupBand = async (input: bandSignupDTO, token: string) => {
         const { name, musicalGenre, responsible } = input
 
         if(!token){
