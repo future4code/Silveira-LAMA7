@@ -7,14 +7,15 @@ import { BandDataBase } from "../../data/BandDataBase";
 import { BandController } from "../BandController";
 
 export const bandRouter = express.Router()
-const bandController = new BandController(
-    new BandBusiness(
-        new Authenticator(),
-        new BandDataBase(),
-        new HashManager(),
-        new IdGenerator()
-    )
+
+const userBusiness = new BandBusiness(
+    new Authenticator(),
+    new BandDataBase(),
+    new HashManager(),
+    new IdGenerator()
 )
+
+const bandController = new BandController(userBusiness)
 
 bandRouter.post("/signup", bandController.signupBand)
 
