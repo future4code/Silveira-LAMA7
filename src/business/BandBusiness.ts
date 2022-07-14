@@ -5,7 +5,7 @@ import { Authenticator } from "./services/Authenticator";
 import { HashManager } from "./services/HashManager";
 import { IdGenerator } from "./services/IdGenerator";
 
-export class  BandBusiness {
+export class BandBusiness {
     constructor(
         private authenticator: Authenticator,
         private bandDataBase: BandDataBase,

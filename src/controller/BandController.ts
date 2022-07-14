@@ -1,11 +1,12 @@
 import { Request, Response } from "express";
 import { BandBusiness } from "../business/BandBusiness";
+
 import { bandSignupDTO } from "./interfaces/BandSignupDTO";
 
 export class BandController {
     constructor(
         private bandBusiness: BandBusiness
-    ) {}
+    ){}
 
     public async signupBand(req: Request, res: Response) {
         try {
@@ -18,13 +19,14 @@ export class BandController {
                 responsible
             }
 
-            this.bandBusiness.signupBand(input,token)
-            res.send("Banda cadastrada com sucesso")
+            await this.bandBusiness.signupBand(input,token)
+            res.status(201).send("Banda cadastrada com sucesso")
 
         } catch (error: any) {
-            res.status(error.statusCode).send(error.message)
+            res.status( error.statusCode || 400 ).send(error.message)
         }
 
-
     }
+
+    
 }

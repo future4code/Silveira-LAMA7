@@ -1,0 +1,8 @@
+POST http://localhost:3003/band/signup 
+Content-Type: application/json
+
+{
+    "name": "Beatles",
+    "musicGenre":"Rock",
+    "responsible":"John Lennon"
+}
