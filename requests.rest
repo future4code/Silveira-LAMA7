@@ -48,3 +48,11 @@ auth: {{token}}
 ###
 GET http://localhost:3003/show/info/1c258d15-bda8-4c30-9f5f-693f359df816
 auth: {{token}}
+
+###
+POST http://localhost:3003/gallery/post
+Content-Type: application/json
+
+    {
+        "photo": ""
+    }
