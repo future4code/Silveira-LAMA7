@@ -2,15 +2,15 @@ import { bandSignupDTO } from "../controller/interfaces/BandSignupDTO";
 import { Database } from "./Database";
 
 export class BandDataBase extends Database {
-    public async insertBand(input: bandSignupDTO, id: string) {
+    public insertBand = async (input: bandSignupDTO, id: string) => {
         try {
             
             const { name, musicalGenre, responsible } = input
-            Database.connection()
+            await Database.connection()
                 .insert({
                     id,
                     name,
-                    musicalGenre,
+                    music_genre: musicalGenre,
                     responsible
                 })
                 .into("Lama7_Bands")
@@ -19,4 +19,20 @@ export class BandDataBase extends Database {
             throw new Error(error.sqlMessage);
         }
     }
+
+    public getBandByName = async (bandName: string) => {
+        try {
+   
+            const band = await Database.connection()
+                .select("*")
+                .from("Lama7_Bands")
+                .where({name: bandName})
+
+            return band
+
+        } catch (error: any) {
+            throw new Error(error.sqlMessage);
+        }
+    }
+
 }
