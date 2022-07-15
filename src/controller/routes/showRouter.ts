@@ -15,4 +15,4 @@ const showBusiness = new ShowBusiness(
 
 const showController = new ShowController(showBusiness)
 
-showRouter.post("/create/show", showController.createShow);
+showRouter.post("/create", showController.createShow);

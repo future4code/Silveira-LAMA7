@@ -32,12 +32,15 @@ Content-Type: application/json
     }
 
 ###
-POST http://localhost:3003/create/show
+@token = {{login.response.body.token}}
+
+POST http://localhost:3003/show/create
 Content-Type: application/json
+auth: {{token}}
 
     {
-        "week_day": "FRIDAY",
-        "start_time": "8",
-        "end_time": "9",
-        "band_id": "?"
+        "weekDay": "FRIDAY",
+        "startTime": 16,
+        "endTime": 17,
+        "bandId": "63ba42b4-1923-4591-b5bc-54ab89a0d319"
     }

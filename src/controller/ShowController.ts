@@ -7,7 +7,7 @@ export class ShowController {
         private showBusiness: ShowBusiness
     ) { }
 
-    async createShow(req: Request, res: Response) {
+    public createShow = async (req: Request, res: Response) => {
         try {
             const { weekDay, startTime, endTime, bandId } = req.body
 
@@ -21,7 +21,7 @@ export class ShowController {
             const token = req.headers.auth as string
 
             await this.showBusiness.createShow(input, token)
-            res.status(201).send({ message: "Sucesso - controller1", token })
+            res.status(201).send({ message: "Sucesso!! Show registrado" })
         } catch (error: any) {
             res.status(500).send(error.sqlMessage || error.message);
         }
