@@ -44,3 +44,7 @@ auth: {{token}}
         "endTime": 17,
         "bandId": "63ba42b4-1923-4591-b5bc-54ab89a0d319"
     }
+
+###
+GET http://localhost:3003/show/info/1c258d15-bda8-4c30-9f5f-693f359df816
+auth: {{token}}

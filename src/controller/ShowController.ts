@@ -26,4 +26,17 @@ export class ShowController {
             res.status(500).send(error.sqlMessage || error.message);
         }
     }
+
+    public getShowById = async (req: Request, res: Response) => {
+        try {
+            const id = req.params.id
+
+            const token = req.headers.auth as string
+
+            const showInfo = await this.showBusiness.getShowById(id, token)
+            res.status(200).send(showInfo)
+        } catch (error: any) {
+            res.status(500).send(error.sqlMessage || error.message);
+        }
+    }
 }

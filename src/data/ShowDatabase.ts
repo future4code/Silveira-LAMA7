@@ -29,4 +29,17 @@ export class ShowDatabase extends Database {
             })
         return result
     }
+
+    public getShowById = async (id: string): Promise<any> => {
+        try {
+            const [result] = await Database.connection(this.TABLE_NAME)
+                .select("*")
+                .where({
+                    id
+                })
+            return result
+        } catch (error: any) {
+            throw new CustomError(500, "Show não existe no banco de dados")
+        }
+    }
 }

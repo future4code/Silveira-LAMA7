@@ -65,4 +65,29 @@ export class ShowBusiness {
             throw new Error(error.message)
         }
     }
+
+    public getShowById = async (id: string, token: string) => {
+
+        if (!id) {
+            throw new CustomError(400, "Parâmetro de busca faltando")
+        }
+
+        if (!token) {
+            throw new CustomError(400, "Token inexistente")
+        }
+
+        const tokenData = this.authenticator.getTokenData(token)
+
+        if (tokenData.role !== "ADMIN") {
+            throw new CustomError(401, "Usuário não autorizado")
+        }
+
+        const showInfo = await this.showDatabase.getShowById(id)
+
+        if (!showInfo) {
+            throw new CustomError(500, "Show não encontrado no banco de dados")
+        }
+
+        return showInfo
+    }
 }

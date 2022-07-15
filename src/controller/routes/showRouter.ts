@@ -16,3 +16,4 @@ const showBusiness = new ShowBusiness(
 const showController = new ShowController(showBusiness)
 
 showRouter.post("/create", showController.createShow);
+showRouter.get("/info/:id", showController.getShowById)
