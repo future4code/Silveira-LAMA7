@@ -20,4 +20,12 @@ Content-Type: application/json
     }
 
 ###
-POST http://localhost:3003/show/create
+POST http://localhost:3003/create/show
+Content-Type: application/json
+
+    {
+        "week_day": "FRIDAY",
+        "start_time": "8",
+        "end_time": "9",
+        "band_id": "?"
+    }
