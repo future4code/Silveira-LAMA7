@@ -6,11 +6,11 @@ export class BandDataBase extends Database {
         try {
             
             const { name, musicalGenre, responsible } = input
-            Database.connection()
+            await Database.connection()
                 .insert({
                     id,
                     name,
-                    musicalGenre,
+                    music_genre: musicalGenre,
                     responsible
                 })
                 .into("Lama7_Bands")
@@ -19,4 +19,20 @@ export class BandDataBase extends Database {
             throw new Error(error.sqlMessage);
         }
     }
+
+    public getBandByName = async (bandName: string) => {
+        try {
+   
+            const band = await Database.connection()
+                .select("*")
+                .from("Lama7_Bands")
+                .where({name: bandName})
+
+            return band
+
+        } catch (error: any) {
+            throw new Error(error.sqlMessage);
+        }
+    }
+
 }

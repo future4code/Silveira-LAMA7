@@ -19,3 +19,5 @@ const bandController = new BandController(bandBusiness)
 
 bandRouter.post("/signup", bandController.signupBand)
 
+bandRouter.get("/info/:name", bandController.getBandInfo)
+

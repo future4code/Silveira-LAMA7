@@ -1,3 +1,4 @@
+import { bandInfoDTO } from "../controller/interfaces/BandInfoDTO";
 import { bandSignupDTO } from "../controller/interfaces/BandSignupDTO";
 import { BandDataBase } from "../data/BandDataBase";
 import { CustomError } from "./errors/CustomError";
@@ -21,16 +22,41 @@ export class BandBusiness {
             throw new CustomError(401,"Acesso não autorizado");
         }
 
-        // faltado a validação de se o usuário é administrador
         const tokenData = this.authenticator.getTokenData(token)
+
+        if(tokenData.role != "ADMIN"){
+            throw new CustomError(401,"Ação não autorizada");
+        }
 
         if(!name || !musicalGenre || !responsible){
             throw new CustomError(400,"Campos inválidos");
+        }
+
+        const band = await this.bandDataBase.getBandByName(name)
+
+        if(band[0] != undefined){
+            throw new CustomError(409,"Banda Já Cadastrada");
         }
 
         const id = this.idGenerator.generateId()
 
         await this.bandDataBase.insertBand(input,id)
 
+    }
+
+    public getBandInfo = async (input: bandInfoDTO, token: string) => {
+        const bandName = input.bandName
+
+        if(!token){
+            throw new CustomError(401,"Acesso não autorizado");
+        }
+
+        if(!bandName){
+            throw new CustomError(400,"Campos inválidos");
+        }
+
+        const bandInfo = await this.bandDataBase.getBandByName(bandName)
+
+        return bandInfo
     }
 }
