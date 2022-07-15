@@ -30,3 +30,14 @@ Content-Type: application/json
         "email": "luis_email@hotmail.com",
         "password": "senhaluis"
     }
+
+###
+POST http://localhost:3003/create/show
+Content-Type: application/json
+
+    {
+        "week_day": "FRIDAY",
+        "start_time": "8",
+        "end_time": "9",
+        "band_id": "?"
+    }
