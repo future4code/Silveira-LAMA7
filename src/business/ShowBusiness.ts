@@ -1,9 +1,8 @@
 import { ShowDatabase } from "../data/ShowDatabase";
 import { CustomError } from "./errors/CustomError";
-import { Show, ShowInputDTO } from "./models/ShowModel";
+import { ShowInputDTO } from "./models/ShowModel";
 import { SHOW_DAY } from "./models/ShowModel";
 import { Authenticator } from "./services/Authenticator";
-import { HashManager } from "./services/HashManager";
 import { IdGenerator } from "./services/IdGenerator";
 
 export class ShowBusiness {

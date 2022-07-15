@@ -18,3 +18,6 @@ Content-Type: application/json
         "email": "luis_email@hotmail.com",
         "password": "senhaluis"
     }
+
+###
+POST http://localhost:3003/show/create
