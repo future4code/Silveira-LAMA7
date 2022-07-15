@@ -5,7 +5,7 @@ export enum SHOW_DAY {
 }
 
 export interface ShowInputDTO {
-    week_day: string,
+    week_day: SHOW_DAY,
     start_time: number,
     end_time: number,
     band_id: string
@@ -19,4 +19,23 @@ export class Show {
         private end_time: number,
         private band_id: string
     ) { }
+    getId() {
+        return this.id
+    }
+
+    getWeekDay() {
+        return this.week_day
+    }
+
+    getStartTime() {
+        return this.start_time
+    }
+
+    getEndTime() {
+        return this.end_time
+    }
+
+    getBandId() {
+        return this.band_id
+    }
 }
