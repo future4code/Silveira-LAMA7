@@ -32,12 +32,27 @@ Content-Type: application/json
     }
 
 ###
-POST http://localhost:3003/create/show
+@token = {{login.response.body.token}}
+
+POST http://localhost:3003/show/create
+Content-Type: application/json
+auth: {{token}}
+
+    {
+        "weekDay": "FRIDAY",
+        "startTime": 16,
+        "endTime": 17,
+        "bandId": "63ba42b4-1923-4591-b5bc-54ab89a0d319"
+    }
+
+###
+GET http://localhost:3003/show/info/1c258d15-bda8-4c30-9f5f-693f359df816
+auth: {{token}}
+
+###
+POST http://localhost:3003/gallery/post
 Content-Type: application/json
 
     {
-        "week_day": "FRIDAY",
-        "start_time": "8",
-        "end_time": "9",
-        "band_id": "?"
+        "photo": ""
     }

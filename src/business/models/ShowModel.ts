@@ -11,6 +11,14 @@ export interface ShowInputDTO {
     band_id: string
 }
 
+export interface ShowModel {
+    id: string,
+    week_day: SHOW_DAY,
+    start_time: number,
+    end_time: number,
+    band_id: string
+}
+
 export class Show {
     constructor(
         private id: string,
