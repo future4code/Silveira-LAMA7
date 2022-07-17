@@ -53,6 +53,9 @@ auth: {{token}}
 POST http://localhost:3003/gallery/post
 Content-Type: application/json
 
-    {
-        "photo": "https://somos.lojaiplace.com.br/wp-content/uploads/2019/04/GettyImages-667709450.jpg"
-    }
+{
+    "photo": "https://i.em.com.br/9QtqNS7gjLssroHimkjI052WCSA=/790x/smart/imgsapp.em.com.br/app/noticia_127983242361/2022/07/10/1379200/show-da-cantora-elba-ramalho-em-ouro-preto_1_44203.jpg"
+}
+
+###
+GET http://localhost:3003/gallery/all

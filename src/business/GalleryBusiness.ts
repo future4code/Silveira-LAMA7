@@ -17,8 +17,18 @@ export class GalleryBusiness {
             const newPhoto: photoInputDTO = {
                 photo
             }
-            
+
             await this.galleryDatabase.postPhoto(newPhoto)
+        } catch (error: any) {
+            throw new Error(error.message)
+        }
+    }
+
+    public getPhoto = async () => {
+        try {
+            const result = await this.galleryDatabase.getPhoto()
+
+            return result
         } catch (error: any) {
             throw new Error(error.message)
         }

@@ -16,4 +16,14 @@ export class GalleryDatabase extends Database {
         }
 
     }
+
+    public getPhoto = async () => {
+        try {
+            const [result] = await Database.connection(this.TABLE_NAME)
+                .select("*")
+            return result
+        } catch (error: any) {
+            throw new CustomError(500, error.sqlMessage)
+        }
+    }
 } 
