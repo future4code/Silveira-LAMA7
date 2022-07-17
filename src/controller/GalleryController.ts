@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { GalleryBusiness } from "../business/GalleryBusiness";
-import { photoInputDTO } from "./interfaces/photoInputDTO";
+import { photoInputDTO } from "./interfaces/PhotoInputDTO";
 
 export class GalleryControler {
     constructor(
@@ -9,7 +9,7 @@ export class GalleryControler {
 
     public postPhoto = async (req: Request, res: Response) => {
         try {
-            const photo = req.body
+            const photo = req.body.photo
 
             const input: photoInputDTO = {
                 photo
