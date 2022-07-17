@@ -5,6 +5,6 @@ Para isso já deixamos algumas tabelas prontas para vocês não precisarem se pr
 
 ## Links do Projeto
 
-Link do Heroku: https://silveira-lama7.herokuapp.com/
-Link do Postman: https://documenter.getpostman.com/view/20352989/UzQvtR2o
-Link do Surge: https://lamasilveira7.surge.sh/
+- Link do Heroku: https://silveira-lama7.herokuapp.com/
+- Link do Postman: https://documenter.getpostman.com/view/20352989/UzQvtR2o
+- Link do Surge: https://lamasilveira7.surge.sh/
