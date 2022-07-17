@@ -1,5 +1,5 @@
 import { CustomError } from "../business/errors/CustomError"
-import { photoInputDTO } from "../controller/interfaces/photoInputDTO"
+import { photoInputDTO } from "../controller/interfaces/PhotoInputDTO"
 import { Database } from "./Database"
 
 export class GalleryDatabase extends Database {
