@@ -9,7 +9,7 @@ export class GalleryControler {
 
     public postPhoto = async (req: Request, res: Response) => {
         try {
-            const photo = req.body.photo
+            const photo = String(req.body.photo)
 
             const input: photoInputDTO = {
                 photo

@@ -9,7 +9,7 @@ export class GalleryDatabase extends Database {
         try {
             await Database.connection(this.TABLE_NAME)
                 .insert({
-                    photo: newPhoto
+                    photo: newPhoto.photo
                 })
         } catch (error: any) {
             throw new CustomError(500, error.sqlMessage)
@@ -19,7 +19,7 @@ export class GalleryDatabase extends Database {
 
     public getPhoto = async () => {
         try {
-            const [result] = await Database.connection(this.TABLE_NAME)
+            const result = await Database.connection(this.TABLE_NAME)
                 .select("*")
             return result
         } catch (error: any) {
