@@ -12,3 +12,4 @@ const galleryBusiness = new GalleryBusiness(
 const galleryControler = new GalleryControler(galleryBusiness)
 
 galleryRouter.post("/post", galleryControler.postPhoto)
+galleryRouter.get("/all", galleryControler.getPhoto)
